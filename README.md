@@ -34,17 +34,21 @@ _Example text for the description of the project_
 ## Setup/Installation Requirements
 
 * _Clone the repository_
+*_Create database on your local machine (See instructions below)_*
 * _Run the command 'gradle run'_
 * _Open browser and go to localhost:4567_
 
-CREATE DATABASE hair_salon;
-\c hair_salon;
+You must create the database on your local machine for this app to work correctly.
+ 
+1. CREATE DATABASE hair_salon;
 
-CREATE TABLE stylists (id serial PRIMARY KEY, name varchar, hire_date varchar, phone int, email varchar, experience varchar);
+2. \c hair_salon;
 
-CREATE TABLE clients (id serial PRIMARY KEY, name varchar, created_at timestamp, stylist_id int, phone int, email varchar);
+3. CREATE TABLE stylists (id serial PRIMARY KEY, name varchar, hire_date varchar, phone int, email varchar, experience varchar);
 
-CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
+4. CREATE TABLE clients (id serial PRIMARY KEY, name varchar, created_at timestamp, stylist_id int, phone int, email varchar);
+
+5. CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
 
 ### License
 
