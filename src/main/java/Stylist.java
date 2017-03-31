@@ -4,11 +4,11 @@ import org.sql2o.*;
 
 public class Stylist {
   private String name;
-  // private Integer phone;
+  private String phone;
 
-  public Stylist(String name) {
+  public Stylist(String name, String phone) {
     this.name = name;
-    // this.phone = phone;
+    this.phone = phone;
 
   }
 
@@ -16,7 +16,7 @@ public class Stylist {
     return name;
   }
 
-  // public Integer getPhone() {
-  //   return phone;
-  // }
+  public String getPhone() {
+    return phone;
+  }
 }
