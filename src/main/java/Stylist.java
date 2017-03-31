@@ -7,12 +7,14 @@ public class Stylist {
   private String phone;
   private String email;
   private String hireDate;
+  private String experience;
 
-  public Stylist(String name, String phone, String email, String hireDate) {
+  public Stylist(String name, String phone, String email, String hireDate, String experience) {
     this.name = name;
     this.phone = phone;
     this.email = email;
     this.hireDate = hireDate;
+    this.experience = experience;
 
   }
 
@@ -30,5 +32,9 @@ public class Stylist {
 
   public String getHireDate() {
     return hireDate;
+  }
+
+  public String getExperience() {
+    return experience;
   }
 }
