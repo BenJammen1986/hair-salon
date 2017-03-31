@@ -43,4 +43,11 @@ public class StylistTest {
     Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
     assertEquals("12 years", newStylist.getExperience());
   }
+
+  @Test
+  public void stylist_savesToDatabaseWithIdReturnedCorrectly() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    assertTrue(newStylist.getId() > 1);
+  }
 }
