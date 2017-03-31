@@ -13,4 +13,17 @@ public class StylistTest {
     Stylist newStylist = new Stylist("Georgio Ramirez");
     assertEquals(true, newStylist instanceof Stylist);
   }
+
+  @Test
+  public void stylist_instantiatesWithNameCorrectly() {
+    Stylist newStylist = new Stylist("Georgio Ramirez");
+    assertEquals("Georgio Ramirez", newStylist.getName());
+  }
+
+  // @Test
+  // public void stylist_instantiatesWithPhoneNumberCorrectly() {
+  //   Stylist newStylist = new Stylist("Georgio Ramirez", 5038712356);
+  //   assertEquals(5038712355, newStylist.getPhone());
+  // }
+
 }
