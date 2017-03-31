@@ -2,7 +2,7 @@
 
 #### _Hair-Salon, 03-31-2017_
 
-#### By _**Ben**_
+#### By _**Ben Schenkenberger**_
 
 ## Description
 _Example text for the description of the project_
@@ -24,6 +24,6 @@ _Example text for the description of the project_
 
 ### License
 
-Copyright (c) 2017 **_Ben_**
+Copyright (c) 2017 **_Ben Schenkenberger_**
 
 This software is licensed under the MIT license.
