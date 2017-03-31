@@ -37,6 +37,14 @@ _Example text for the description of the project_
 * _Run the command 'gradle run'_
 * _Open browser and go to localhost:4567_
 
+CREATE DATABASE hair_salon;
+\c hair_salon;
+
+CREATE TABLE stylists (id serial PRIMARY KEY, name varchar, hire_date varchar, phone int, email varchar, experience varchar);
+
+CREATE TABLE clients (id serial PRIMARY KEY, name varchar, created_at timestamp, stylist_id int, phone int, email varchar);
+
+CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
 
 ### License
 
