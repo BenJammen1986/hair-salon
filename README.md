@@ -12,6 +12,9 @@ _Example text for the description of the project_
 
 | Behavior                   | Input Example     | Output Example    |
 | -------------------------- | -----------------:| -----------------:|
+| 1. A new stylist can be added | Georgio Ramirez | Georgio Ramirez |
+| 2. New stylist name is saved correctly | Georgio Ramirez | Georgio Ramirez |
+| 3.
 
 
 
