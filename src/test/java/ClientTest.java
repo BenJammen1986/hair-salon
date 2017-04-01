@@ -5,4 +5,11 @@ import java.time.LocalDateTime;
 
 public class ClientTest {
 
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
+
+  @Test
+  public void client_objectInstantiatesCorrectly() {
+    
+  }
 }
