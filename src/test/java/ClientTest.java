@@ -31,4 +31,10 @@ public class ClientTest {
     Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com");
     assertEquals("bobfredrickson@gmail.com", newClient.getEmail());
   }
+
+  @Test
+  public void client_instantiatesWithTimestampCorrectly() {
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com");
+    assertEquals(LocalDateTime.now().getDayOfWeek(), newClient.getCreatedAt().getDayOfWeek());
+  }
 }
