@@ -10,19 +10,25 @@ public class ClientTest {
 
   @Test
   public void client_objectInstantiatesCorrectly_true() {
-    Client newClient = new Client("Bob Fredrickson", "971-275-8543");
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com");
     assertEquals(true, newClient instanceof Client);
   }
 
   @Test
   public void client_instantiatesWithNameCorrectly() {
-    Client newClient = new Client("Bob Fredrickson", "971-275-8543");
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com");
     assertEquals("Bob Fredrickson", newClient.getName());
   }
 
   @Test
   public void client_instantiatesWithPhoneCorrectly() {
-    Client newClient = new Client("Bob Fredrickson", "971-275-8543");
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com");
     assertEquals("971-275-8543", newClient.getPhone());
+  }
+
+  @Test
+  public void client_instantiatesWithEmailCorrectly() {
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com");
+    assertEquals("bobfredrickson@gmail.com", newClient.getEmail());
   }
 }
