@@ -9,7 +9,8 @@ public class ClientTest {
   public DatabaseRule database = new DatabaseRule();
 
   @Test
-  public void client_objectInstantiatesCorrectly() {
-    
+  public void client_objectInstantiatesCorrectly_true() {
+    Client newClient = new Client("Bob Fredrickson");
+    assertEquals(true, newClient instanceof Client);
   }
 }
