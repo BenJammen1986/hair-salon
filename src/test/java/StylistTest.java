@@ -45,6 +45,13 @@ public class StylistTest {
   }
 
   @Test
+  public void equals_returnstrueIfPropertiesAreTheSame() {
+    Stylist newStylist1 = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    Stylist newStylist2 = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    assertTrue(newStylist1.equals(newStylist2));
+  }
+
+  @Test
   public void save_savesIntoDatabase_true() {
     Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
     newStylist.save();
