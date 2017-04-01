@@ -10,13 +10,19 @@ public class ClientTest {
 
   @Test
   public void client_objectInstantiatesCorrectly_true() {
-    Client newClient = new Client("Bob Fredrickson");
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543");
     assertEquals(true, newClient instanceof Client);
   }
 
   @Test
   public void client_instantiatesWithNameCorrectly() {
-    Client newClient = new Client("Bob Fredrickson");
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543");
     assertEquals("Bob Fredrickson", newClient.getName());
+  }
+
+  @Test
+  public void client_instantiatesWithPhoneCorrectly() {
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543");
+    assertEquals("971-275-8543", newClient.getPhone());
   }
 }

@@ -21,10 +21,10 @@ _Example text for the description of the project_
 | 7. Multiple stylists info can is saved correctly | Georgio Ramirez, Valerie Ford | Georgio Ramirez, Valerie Ford |
 | 8. A new client can be added to a stylist | Bob Fredrickson | Bob Fredrickson |
 | 9. A new client's name is saved to profile | Bob Fredrickson | Bob Fredrickson |
-| 10. A new client's stylist's name is saved to profile | Bob Fredrickson, Georgio Ramirez | Bob Fredrickson, Georgio Ramirez |
-| 11. A new client's phone # is saved to profile | Bob Fredrickson, Georgio Ramirez, 9712758543 | Bob Fredrickson, Georgio Ramirez, 9712758543 |
-| 12. A new client's email is saved to profile | Bob Fredrickson, Georgio Ramirez, 9712758543, bobfredrickson@gmail.com | Bob Fredrickson, Georgio Ramirez, 9712758543, bobfredrickson@gmail.com |
-| 13. A new client's start date shows in their profile | Bob Fredrickson, Georgio Ramirez, 9712758543, bobfredrickson@gmail.com, 03-27-2017 | Bob Fredrickson, Georgio Ramirez, 9712758543, bobfredrickson@gmail.com, 03-27-2017 |
+| 11. A new client's phone # is saved to profile | Bob Fredrickson, 9712758543 | Bob Fredrickson, 9712758543 |
+| 12. A new client's email is saved to profile | Bob Fredrickson, 9712758543, bobfredrickson@gmail.com | Bob Fredrickson, 9712758543, bobfredrickson@gmail.com |
+| 13. A new client's start date shows in their profile | Bob Fredrickson, 9712758543, bobfredrickson@gmail.com, 03-27-2017 | Bob Fredrickson, 9712758543, bobfredrickson@gmail.com, 03-27-2017 |
+| 10. A new client's stylist's name is saved to profile | Bob Fredrickson, 9712758543, bobfredrickson@gmail.com, 03-27-2017, Georgio Ramirez | Bob Fredrickson, 9712758543, bobfredrickson@gmail.com, 03-27-2017, Georgio Ramirez |
 | 14. A list of all of a stylists clients can be viewed | Georgio Ramirez: Bob Fredrickson, Anne Withers, Dan Fouts | Georgio Ramirez: Bob Fredrickson, Anne Withers, Dan Fouts |
 
 ## Setup/Installation Requirements
