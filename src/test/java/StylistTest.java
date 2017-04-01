@@ -45,6 +45,21 @@ public class StylistTest {
   }
 
   @Test
+  public void save_savesIntoDatabase_true() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    assertTrue(Stylist.all().get(0).equals(newStylist));
+  }
+
+  @Test
+  public void save_assignsIdToObject() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    Stylist savedStylist = Stylist.all().get(0);
+    assertEquals(newStylist.getId(), savedStylist.getId());
+  }
+
+  @Test
   public void stylist_savesToDatabaseWithIdReturnedCorrectly() {
     Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
     newStylist.save();
