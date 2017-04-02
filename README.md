@@ -18,6 +18,7 @@ _Example text for the description of the project_
 | 4. New stylist's email is saved to profile | Georgio Ramirez, 5032301512, georgio.ramirezstylist@gmail.com | Georgio Ramirez, 5032301512, georgio.ramirezstylist@gmail.com |
 | 5. New stylist's hire date is saved to profile | Georgio Ramirez, 5032301512, georgio.ramirezstylist@gmail.com, 03-25-2017 | Georgio Ramirez, 5032301512, georgio.ramirezstylist@gmail.com, 03-25-2017 |
 | 6. New stylist's experience is saved to profile | Georgio Ramirez, 5032301512, georgio.ramirezstylist@gmail.com, 03-25-2017, 12 years | Georgio Ramirez, 5032301512, georgio.ramirezstylist@gmail.com, 03-25-2017, 12 years |
+| 7. A stylist's profile info can be updated | email changed to: georgio.ramirezstyles@gmail.com | georgio.ramirezstyles@gmail.com |
 | 7. Multiple stylists info can is saved correctly | Georgio Ramirez, Valerie Ford | Georgio Ramirez, Valerie Ford |
 | 8. A new client can be added to a stylist | Bob Fredrickson | Bob Fredrickson |
 | 9. A new client's name is saved to profile | Bob Fredrickson | Bob Fredrickson |

@@ -77,7 +77,17 @@ public class Stylist {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM stylists;";
       return con.createQuery(sql).executeAndFetch(Stylist.class);
-
     }
   }
+
+  public static Stylist find(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM stylists where id=:id;";
+      Stylist stylist = con.createQuery(sql)
+        .addParameter("id", id)
+        .executeAndFetchFirst(Stylist.class);
+      return stylist;
+    }
+  }
+
 }

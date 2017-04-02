@@ -70,11 +70,11 @@ public class StylistTest {
   public void stylist_savesToDatabaseWithIdReturnedCorrectly() {
     Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
     newStylist.save();
-    assertTrue(newStylist.getId() > 1);
+    assertTrue(newStylist.getId() > 0);
   }
 
   @Test
-  public void multipleStylistsReturnWithCorrectId() {
+  public void returnsMultipleStylists_true() {
     Stylist newStylist1 = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
     Stylist newStylist2 = new Stylist("Ned Flanders", "503-769-0243", "nedstyleshair@gmail.com", "10-12-2014", "6 years");
     newStylist1.save();
@@ -82,5 +82,23 @@ public class StylistTest {
     assertEquals(true, Stylist.all().get(0).equals(newStylist1));
     assertEquals(true, Stylist.all().get(1).equals(newStylist2));
   }
+
+  @Test
+  public void find_returnsStylistWithSameId_secondStylist() {
+    Stylist newStylist1 = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist1.save();
+    Stylist newStylist2 = new Stylist("Ned Flanders", "503-769-0243", "nedstyleshair@gmail.com", "10-12-2014", "6 years");
+    newStylist2.save();
+    assertEquals(Stylist.find(newStylist2.getId()), newStylist2);
+  }
+
+  //
+  // @Test
+  // public void update_updatesStylistName_true() {
+  //   Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+  //   newStylist.save();
+  //   myStylist.updateName("Georgio Ramses");
+  //   assertEquals("Georgio Ramses", newStylist.getId()).getName();
+  // }
 
 }
