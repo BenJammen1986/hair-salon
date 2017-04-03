@@ -67,7 +67,7 @@ public class StylistTest {
   }
 
   @Test
-  public void stylist_savesToDatabaseWithIdReturnedCorrectly() {
+  public void stylist_savesToDatabaseWithId() {
     Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
     newStylist.save();
     assertTrue(newStylist.getId() > 0);
@@ -76,13 +76,13 @@ public class StylistTest {
   @Test
   public void returnsMultipleStylists_true() {
     Stylist newStylist1 = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
-    Stylist newStylist2 = new Stylist("Ned Flanders", "503-769-0243", "nedstyleshair@gmail.com", "10-12-2014", "6 years");
     newStylist1.save();
+    Stylist newStylist2 = new Stylist("Ned Flanders", "503-769-0243", "nedstyleshair@gmail.com", "10-12-2014", "6 years");
     newStylist2.save();
     assertEquals(true, Stylist.all().get(0).equals(newStylist1));
     assertEquals(true, Stylist.all().get(1).equals(newStylist2));
-  }
 
+  }
   @Test
   public void find_returnsStylistWithSameId_secondStylist() {
     Stylist newStylist1 = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
@@ -92,13 +92,45 @@ public class StylistTest {
     assertEquals(Stylist.find(newStylist2.getId()), newStylist2);
   }
 
-  //
-  // @Test
-  // public void update_updatesStylistName_true() {
-  //   Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
-  //   newStylist.save();
-  //   myStylist.updateName("Georgio Ramses");
-  //   assertEquals("Georgio Ramses", newStylist.getId()).getName();
-  // }
+
+  @Test
+  public void updateName_updatesStylistName_true() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    newStylist.updateName("George Ramirez");
+    assertEquals("George Ramirez", Stylist.find(newStylist.getId()).getName());
+  }
+
+  @Test
+  public void updatePhone_updatesStylistPhone_true() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    newStylist.updatePhone("971-254-3033");
+    assertEquals("971-254-3033", Stylist.find(newStylist.getId()).getPhone());
+  }
+
+  @Test
+  public void updateEmail_updatesStylistEmail_true() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    newStylist.updateEmail("georgiostyleshair@gmail.com");
+    assertEquals("georgiostyleshair@gmail.com", Stylist.find(newStylist.getId()).getEmail());
+  }
+
+  @Test
+  public void updateHireDate_updatesStylistHireDate_true() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    newStylist.updateHireDate("02-27-2016");
+    assertEquals("02-27-2016", Stylist.find(newStylist.getId()).getHireDate());
+  }
+
+  @Test
+  public void updateExperience_updatesStylistExperience_true() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    newStylist.updateExperience("13 years");
+    assertEquals("13 years", Stylist.find(newStylist.getId()).getExperience());
+  }
 
 }

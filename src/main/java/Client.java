@@ -8,12 +8,14 @@ public class Client {
   private String phone;
   private String email;
   private LocalDateTime created_at;
+  private int category_id;
 
   public Client(String name, String phone, String email) {
     this.name = name;
     this.phone = phone;
     this.email = email;
     created_at = LocalDateTime.now();
+    this.category_id = category_id;
   }
 
   public String getName() {
@@ -32,5 +34,5 @@ public class Client {
     return created_at;
   }
 
-  
+
 }

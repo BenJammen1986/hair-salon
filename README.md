@@ -35,14 +35,16 @@ _Example text for the description of the project_
 * _Run the command 'gradle run'_
 * _Open browser and go to localhost:4567_
 
-You must create the database on your local machine for this app to work correctly.
+You must create the databases on your local machine for this app to work correctly.
 
 1. CREATE DATABASE hair_salon;
 
-2. From the terminal (navigate to project folder "hair-salon") run this command:
-psql hair_salon < salonschema.sql;
+2. \c hair_salon;
 
-3. CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
+3. From the terminal (navigate to project folder "hair-salon") run this command:
+psql hair_salon [USERNAME/ROLE] < salonschema.sql;
+
+4. CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
 
 
 _If you have any trouble with loading the schema, you can use these steps as an alternative:_
