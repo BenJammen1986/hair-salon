@@ -126,4 +126,13 @@ public class ClientTest {
     assertEquals("bobfredrickson@nike.com", Client.find(newClient.getId()).getEmail());
   }
 
+  @Test
+  public void delete_deletesClient_true() {
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    newClient.save();
+    int newClientId = newClient.getId();
+    newClient.deleteClient();
+    assertEquals(null, Client.find(newClientId));
+  }
+
 }
