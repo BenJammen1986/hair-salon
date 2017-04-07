@@ -133,4 +133,13 @@ public class StylistTest {
     assertEquals("13 years", Stylist.find(newStylist.getId()).getExperience());
   }
 
+  @Test
+  public void delete_deletesStylist_true() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    int newStylistId = newStylist.getId();
+    newStylist.deleteStylist();
+    assertEquals(null, Stylist.find(newStylistId));
+  }
+
 }
