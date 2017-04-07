@@ -59,8 +59,6 @@ public class ClientTest {
     assertEquals(true, Client.all().get(1).equals(secondClient));
   }
 
-
-
   @Test
   public void save_recordsDatabaseTimestampCorrectly() {
     Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
@@ -69,4 +67,20 @@ public class ClientTest {
     Timestamp rightNow = new Timestamp(new Date().getTime());
     assertEquals(DateFormat.getDateTimeInstance().format(rightNow), DateFormat.getDateTimeInstance().format(savedCreatedAt));
   }
+
+  @Test
+  public void find_returnsClientWithSameId_secondClient() {
+    Client firstClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    firstClient.save();
+    Client secondClient = new Client("Joe Smith", "208-839-5757", "joe@email.com", 1);
+    secondClient.save();
+    assertEquals(Client.find(secondClient.getId()), secondClient);
+  }
+
+  @Test
+    public void equals_returnsTrueIfDescriptionsAretheSame() {
+      Client firstClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+      Client secondClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+      assertTrue(firstClient.equals(secondClient));
+    }
 }
