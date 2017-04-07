@@ -127,6 +127,14 @@ public class ClientTest {
   }
 
   @Test
+  public void updateStylistId_updatesClientStylistId_true() {
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    newClient.save();
+    newClient.updateStylistId(2);
+    assertEquals(2, Client.find(newClient.getId()).getStylistId());
+  }
+
+  @Test
   public void delete_deletesClient_true() {
     Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
     newClient.save();
