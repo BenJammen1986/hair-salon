@@ -79,12 +79,6 @@ public class Client {
     }
   }
 
-  // public static List<Client> orphanClients() {
-  //   for (Client client : clients) {
-  //
-  //     }
-  //   }
-
   public static Client find(int id) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM clients where id=:id";
@@ -135,7 +129,7 @@ public class Client {
     }
   }
 
-  public void deleteClient() {
+  public void delete() {
   try(Connection con = DB.sql2o.open()) {
   String sql = "DELETE FROM clients WHERE id = :id;";
   con.createQuery(sql)

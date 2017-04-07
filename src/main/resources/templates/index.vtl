@@ -1,3 +1,54 @@
 <!--index.vtl-->
+<h2>We Do Hair Employee List:</h2>
 
+<p> To view a list of clients, you can click on any stylist to access their client list, or you can select the ALL CLIENTS tab to see all the clients who are members of our salon.</p>
+
+<h3>Stylists</h3>
+#if($stylists)
+  <p>Click on a stylist to see their clients:</p>
+  <ul>
+    #foreach ($stylist in $stylists)
+      <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
+    #end
+  </ul>
+#else
+  <p>There are no stylists yet!</p>
+#end
+
+<h2>New Stylist:</h2>
+
+<form action="/stylists" method="post">
+  <label for="name">Stylist name</label>
+  <input id="name" name="name" type="text">
+  <label for="email">Stylist email</label>
+  <input id="email" email="email" type="text">
+  <label for="phone">Stylist phone number</label>
+  <input id="phone" phone="phone" type="text">
+  <label for="hire_date">Stylist hire date</label>
+  <input id="hire_date" hireDate="hire_date" type="text">
+  <label for="experience">years of experience</label>
+  <input id="experience" experience="experience" type="text">
+  <button type="submit" class="btn btn-success">Add Stylist</button>
+</form>
+
+<h2>New Client:</h2>
+
+<form action="/clients" method="post">
+  <label for="stylist_id">Select a Stylist</label>
+  <select id='stylist_id' name='stylist_id' type='text'>
+    #foreach($stylist in $categories)
+      <option value="$stylist.getId()">$stylist.getName()</option>
+    #end
+  </select>
+  <div class="form-group">
+    <label for="name">Client name</label>
+    <input id="name" name="name" type="text">
+    <label for="email">Client email</label>
+    <input id="email" email="email" type="text">
+    <label for="phone">Client phone number</label>
+    <input id="phone" phone="phone" type="text">
+  </div>
+
+  <button type="submit" class="btn btn-success">Add Client</button>
+</form>
 <!--index.vtl-->
