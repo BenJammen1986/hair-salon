@@ -102,5 +102,12 @@ public class ClientTest {
     assertTrue(firstClient.equals(secondClient));
     }
 
+  @Test
+  public void update_updatesClientName_true() {
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    newClient.save();
+    newClient.updateName("Bobby");
+    assertEquals("Bobby", Client.find(newClient.getId()).getName());
+  }
 
 }
