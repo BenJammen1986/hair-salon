@@ -109,4 +109,14 @@ public class Client {
     }
   }
 
+  public void updateEmail(String email) {
+    try(Connection con = DB.sql2o.open()) {
+    String sql = "UPDATE clients SET email = :email WHERE id = :id";
+    con.createQuery(sql)
+      .addParameter("email", email)
+      .addParameter("id", id)
+      .executeUpdate();
+    }
+  }
+
 }
