@@ -1,7 +1,9 @@
 import org.sql2o.*;
 import org.junit.*;
 import static org.junit.Assert.*;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
+import java.util.Date;
+import java.text.DateFormat;
 
 public class ClientTest {
 
@@ -59,9 +61,12 @@ public class ClientTest {
 
 
 
-  // @Test
-  // public void client_instantiatesWithTimestampCorrectly() {
-  //   Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
-  //   assertEquals(DateFormat.getDateTimeInstance().format());
-  // }
+  @Test
+  public void save_recordsDatabaseTimestampCorrectly() {
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    newClient.save();
+    Timestamp savedCreatedAt = Client.find(newClient.getId()).getCreatedAt();
+    Timestamp rightNow = new Timestamp(new Date().getTime());
+    assertEquals(DateFormat.getDateTimeInstance().format(rightNow), DateFormat.getDateTimeInstance().format(savedCreatedAt));
+  }
 }

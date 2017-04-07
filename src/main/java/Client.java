@@ -77,15 +77,15 @@ public class Client {
       .executeAndFetch(Client.class);
     }
   }
-  //
-  // public static Client find(int id) {
-  //   try(Connection con = DB.sql2o.open()) {
-  //     String sql = "SELECT * FROM clients where id=:id";
-  //     Client stylist = con.createQuery(sql)
-  //       .addParameter("id", id)
-  //       .executeAndFetchFirst(Client.class);
-  //     return stylist;
-  //   }
-  // }
+
+  public static Client find(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM clients where id=:id";
+      Client stylist = con.createQuery(sql)
+        .addParameter("id", id)
+        .executeAndFetchFirst(Client.class);
+      return stylist;
+    }
+  }
 
 }
