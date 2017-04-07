@@ -37,16 +37,34 @@ public class ClientTest {
 
   @Test
   public void save_SavesAClientIntoDatabase_true() {
-   Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
-   newClient.save();
-   assertTrue(Client.all().get(0).equals(newClient));
- }
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    newClient.save();
+    assertTrue(Client.all().get(0).equals(newClient));
+  }
 
- @Test
- public void getId_clientInstantiateWithAnID_1() {
-   Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
-   newClient.save();
-   assertTrue(newClient.getId() > 0);
+  @Test
+  public void save_returnsTrueIfNameisTheSame() {
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    newClient.save();
+    assertTrue(Client.all().get(0).equals(newClient));
+  }
+
+  @Test
+  public void save_savesStylistIdIntoDB_true() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    Stylist savedStylist = Stylist.find(newStylist.getId());
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", newStylist.getId());
+    newClient.save();
+    Client savedClient = Client.find(newClient.getId());
+    assertEquals(savedClient.getStylistId(), savedStylist.getId());
+  }
+
+  @Test
+  public void getId_clientGetsDatabaseId_true() {
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    newClient.save();
+    assertTrue(newClient.getId() > 0);
  }
 
   @Test
@@ -78,9 +96,11 @@ public class ClientTest {
   }
 
   @Test
-    public void equals_returnsTrueIfDescriptionsAretheSame() {
-      Client firstClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
-      Client secondClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
-      assertTrue(firstClient.equals(secondClient));
+  public void equals_returnsTrueIfDescriptionsAretheSame() {
+    Client firstClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    Client secondClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    assertTrue(firstClient.equals(secondClient));
     }
+
+
 }

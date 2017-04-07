@@ -15,6 +15,7 @@ public class Client {
     this.name = name;
     this.phone = phone;
     this.email = email;
+    this.stylist_id = stylist_id;
   }
 
   public String getName() {
