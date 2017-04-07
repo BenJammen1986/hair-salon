@@ -103,11 +103,19 @@ public class ClientTest {
     }
 
   @Test
-  public void update_updatesClientName_true() {
+  public void updateName_updatesClientName_true() {
     Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
     newClient.save();
     newClient.updateName("Bobby");
     assertEquals("Bobby", Client.find(newClient.getId()).getName());
+  }
+
+  @Test
+  public void updatePhone_updatesClientPhone_true() {
+    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+    newClient.save();
+    newClient.updatePhone("208-312-3948");
+    assertEquals("208-312-3948", Client.find(newClient.getId()).getPhone());
   }
 
 }
