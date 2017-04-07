@@ -34,10 +34,17 @@ public class ClientTest {
 
 
   @Test
- public void save_SavesAClientIntoDatabase_true() {
+  public void save_SavesAClientIntoDatabase_true() {
    Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
    newClient.save();
    assertTrue(Client.all().get(0).equals(newClient));
+ }
+
+ @Test
+ public void getId_clientInstantiateWithAnID_1() {
+   Client newClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", 1);
+   newClient.save();
+   assertTrue(newClient.getId() > 0);
  }
 
   @Test

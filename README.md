@@ -42,7 +42,7 @@ You must create the databases on your local machine for this app to work correct
 2. \c hair_salon;
 
 3. From the terminal (navigate to project folder "hair-salon") run this command:
-psql hair_salon [USERNAME/ROLE] < salonschema.sql;
+psql hair_salon < salonschema.sql;
 
 4. CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
 
@@ -55,7 +55,7 @@ _If you have any trouble with loading the schema, you can use these steps as an 
 
 3. CREATE TABLE stylists (id serial PRIMARY KEY, name varchar, phone varchar, email varchar, hire_date varchar, experience varchar);
 
-4. CREATE TABLE clients (id serial PRIMARY KEY, name varchar, phone int, email varchar, created_at timestamp, stylist_id int);
+4. CREATE TABLE clients (id serial PRIMARY KEY, name varchar, phone varchar, email varchar, created_at timestamp, stylist_id int);
 
 5. CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
 
