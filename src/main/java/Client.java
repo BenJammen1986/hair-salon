@@ -79,6 +79,12 @@ public class Client {
     }
   }
 
+  // public static List<Client> orphanClients() {
+  //   for (Client client : clients) {
+  //
+  //     }
+  //   }
+
   public static Client find(int id) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM clients where id=:id";
@@ -126,7 +132,7 @@ public class Client {
         .addParameter("stylist_id", stylist_id)
         .addParameter("id", id)
         .executeUpdate();
-    }    
+    }
   }
 
   public void deleteClient() {

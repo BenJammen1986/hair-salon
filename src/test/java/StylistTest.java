@@ -142,4 +142,15 @@ public class StylistTest {
     assertEquals(null, Stylist.find(newStylistId));
   }
 
+  @Test
+  public void getClients_getsAllStylistsClients_true() {
+    Stylist newStylist = new Stylist("Georgio Ramirez", "503-871-2356", "georgio.ramirezstylist@gmail.com", "02-17-2016", "12 years");
+    newStylist.save();
+    Client firstClient = new Client("Bob Fredrickson", "971-275-8543", "bobfredrickson@gmail.com", newStylist.getId());
+    firstClient.save();
+    Client secondClient = new Client("Joe Smith", "208-839-5757", "joe@email.com", newStylist.getId());
+    secondClient.save();
+    assertTrue(newStylist.getClients().get(0).equals(firstClient));
+    assertTrue(newStylist.getClients().get(1).equals(secondClient));
+  }
 }
