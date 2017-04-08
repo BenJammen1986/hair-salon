@@ -1,0 +1,29 @@
+<h1>$client.getName()</h1>
+<h2>When did they become a client?:  $client.getCreatedAt()</h2>
+<h2> Client of: $stylist.getName()</h2>
+
+<h2>Edit client:</h2>
+
+<form action="/stylists/$client.getStylistId()/clients/$client.getId()" method="post">
+  <label for="name">Client Name</label>
+  <input id="name" name="name" type="text">
+  <button type="submit" class="btn btn-info">Update Name</button>
+</form>
+
+<form action="/stylists/$client.getStylistId()/clients/$client.getId()" method="post">
+  <label for="email">Client Email</label>
+  <input id="email" name="email" type="text">
+  <button type="submit" class="btn btn-info">Update Email</button>
+</form>
+
+<form action="/stylists/$client.getStylistId()/clients/$client.getId()" method="post">
+  <label for="phone">Client Phone</label>
+  <input id="phone" name="phone" type="text">
+  <button type="submit" class="btn btn-info">Update Phone</button>
+</form>
+
+<form action="/stylists/$client.getStylistId()/clients/$client.getId()/delete" method="post">
+  <button type="submit" class="btn btn-danger" id="delete-client">Delete Task</button>
+</form>
+
+<a href="/stylists/$stylist.getId()">Return to $stylist.getName()</a>

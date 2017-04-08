@@ -52,10 +52,10 @@ public class App {
 
     post("/clients", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      Stylist stylist = Stylist.find(Integer.parseInt(request.queryParams("stylistId")));
+      Stylist stylist = Stylist.find(Integer.parseInt(request.queryParams("stylist_id")));
       String name = request.queryParams("name");
-      String name = request.queryParams("phone");
-      String name = request.queryParams("email");
+      String phone = request.queryParams("phone");
+      String email = request.queryParams("email");
       Client newClient = new Client(name, phone, email, stylist.getId());
       newClient.save();
       model.put("stylist", stylist);
